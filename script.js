@@ -2,10 +2,20 @@ function retornaSaldoDePartidasRankeadas(vitorias, derrotas) {
     return vitorias - derrotas;
 }
 
+function verificaInput(tag) {
+    let input = document.querySelector(tag).value.trim();
+
+    if (input) {
+        return parseInt(input);
+    } else {
+        return 0;
+    }
+}
+
 function mostraResultadoDasPartidas() {
     let patente = '';
-    let vitorias = 85;
-    let derrotas = 5;
+    let vitorias = verificaInput('#victories');
+    let derrotas = verificaInput('#defeats');
     let saldo = retornaSaldoDePartidasRankeadas(vitorias, derrotas);
     const titulo = document.querySelector('.container__content h1');
 
