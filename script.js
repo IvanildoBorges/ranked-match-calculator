@@ -36,7 +36,9 @@ function mostraResultadoDasPartidas(checaTitulo = true) {
 }
 
 function resetResultados() {
-    vitorias = 0;
-    derrotas = 0;
+    vitorias = document.querySelector('#victories');
+    derrotas = document.querySelector('#defeats');
+    vitorias.value = '';
+    derrotas.value = '';
     mostraResultadoDasPartidas(false);
 }
