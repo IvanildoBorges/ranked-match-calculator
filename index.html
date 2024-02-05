@@ -8,8 +8,20 @@
 <body>
     <div class="container">
         <div class="container__content">
-            <h1 class="content__title">O Herói tem de saldo de 0 está no nível de ferro.</h1>
-
+            <h1 class="content__title">Saldo de partidas Rankeadas</h1>
+            <div class="container__inputs">
+                <div class="container__input">
+                    <p class="input-paragraph">Digite o número de vitórias:</p>
+                    <input type="number" name="input-victories" id="victories" placeholder="0">
+                </div>
+                <div class="container__input">
+                    <p class="input-paragraph">Digite o número de derrotas:</p>
+                    <input type="number" name="input-defeats" id="defeats" placeholder="0">
+                </div>
+                <div class="container__buttons">
+                    <button type="button" onclick="mostraResultadoDasPartidas()">Calcular</button>
+                </div>
+            </div>
         </div>
     </div>
     <script type="text/javascript" src="./script.js"></script>

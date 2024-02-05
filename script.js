@@ -29,5 +29,3 @@ function mostraResultadoDasPartidas() {
         O Herói tem de saldo de ${saldo} está no nível de ${patente}
     `;
 }
-
-mostraResultadoDasPartidas();
