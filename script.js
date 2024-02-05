@@ -1,23 +1,18 @@
+let patente = '';
+let vitorias = 0;
+let derrotas = 0;
+let saldo = 0;
+let titulo = '';
+
 function retornaSaldoDePartidasRankeadas(vitorias, derrotas) {
     return vitorias - derrotas;
 }
 
-function verificaInput(tag) {
-    let input = document.querySelector(tag).value.trim();
-
-    if (input) {
-        return parseInt(input);
-    } else {
-        return 0;
-    }
-}
-
-function mostraResultadoDasPartidas() {
-    let patente = '';
-    let vitorias = verificaInput('#victories');
-    let derrotas = verificaInput('#defeats');
-    let saldo = retornaSaldoDePartidasRankeadas(vitorias, derrotas);
-    const titulo = document.querySelector('.container__content h1');
+function mostraResultadoDasPartidas(checaTitulo = true) {
+    vitorias = document.querySelector('#victories').value.trim();
+    derrotas = document.querySelector('#defeats').value.trim();
+    saldo = retornaSaldoDePartidasRankeadas(vitorias, derrotas);
+    titulo = document.querySelector('.container__content h1');
 
     if (vitorias <= 10) {
         patente = 'Ferro';
@@ -35,7 +30,13 @@ function mostraResultadoDasPartidas() {
         patente = 'Imortal';
     }
 
-    titulo.innerHTML = `
+    titulo.innerHTML = checaTitulo ? `
         O Herói tem de saldo de ${saldo} está no nível de ${patente}
-    `;
+    ` : 'Saldo de partidas Rankeadas';
+}
+
+function resetResultados() {
+    vitorias = 0;
+    derrotas = 0;
+    mostraResultadoDasPartidas(false);
 }
