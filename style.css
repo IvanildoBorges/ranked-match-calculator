@@ -105,7 +105,7 @@ body {
     border-bottom: 5px solid #333333;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1234px) {
     body {
         font-size: 1.25rem;
     }
@@ -115,7 +115,8 @@ body {
         align-items: center;
         justify-content: center;
         min-height: 100dvh;
-        width: auto;
+        min-width: 100dvw;
+        width: 300px;
     }
     
     .container__content {
@@ -128,7 +129,7 @@ body {
     
     .container__content__info {
         gap: 1.5rem;
-        width: auto;
+        width: 100%;
     }
     
     .container__content img {
